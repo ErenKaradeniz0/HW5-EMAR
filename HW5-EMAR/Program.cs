@@ -12,22 +12,24 @@ namespace HW5_EMAR
 
             DrawBox(width, height, BOX_COUNT);
             Console.SetCursorPosition(1, 2);
+            int[] cursorPositions = new int[BOX_COUNT];
+            for (int i = 0; i < BOX_COUNT; i++) cursorPositions[i] = 1;
+
+            int currentBox = 0;
             while (true)
             {
                 var key = Console.ReadKey(true);
-
                 if (key.Key == ConsoleKey.Tab)
                 {
-                    int cursorLeft = Console.GetCursorPosition().Left;
+                    cursorPositions[currentBox] = Console.GetCursorPosition().Left;
+                    int currentTop = Console.GetCursorPosition().Top;
+                    currentBox = (currentBox + 1) % BOX_COUNT;
 
-                    if (Console.GetCursorPosition().Top < BOX_COUNT * height)
-                    {
-                        Console.SetCursorPosition(cursorLeft, Console.GetCursorPosition().Top + height + 1);
-                    }
-                    else
-                    {
-                        Console.SetCursorPosition(cursorLeft, Console.GetCursorPosition().Top - BOX_COUNT * height + 1);
-                    }
+                    int newTop = (currentBox == 0)
+                        ? 2
+                        : currentTop + height + 1;
+
+                    Console.SetCursorPosition(cursorPositions[currentBox], newTop);
                 }
                 else if (key.Key == ConsoleKey.Backspace)
                 {
@@ -72,10 +74,7 @@ namespace HW5_EMAR
             for (int i = 0; i < height - 2; i++)
             {
                 Console.Write('║');
-
-                char fillChar = ' ';
-                Console.Write(new string(fillChar, width));
-
+                Console.Write(new string(' ', width));
                 Console.WriteLine('║');
             }
         }
