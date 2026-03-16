@@ -9,11 +9,17 @@ namespace HW5_EMAR
             int BOX_COUNT = 3;
             int width = 20;
             int height = 3;
-
-            DrawBox(width, height, BOX_COUNT);
-            Console.SetCursorPosition(1, 2);
+            List<string> boxLabels = new List<string>(BOX_COUNT)
+            {
+                "Ad Soyad" ,
+                "Cep Telefonu",
+                "Cep Telefonu"
+            };
+            
+            DrawBox(width, height, BOX_COUNT, boxLabels);
+            Console.SetCursorPosition(width + 1, 2);
             int[] cursorPositions = new int[BOX_COUNT];
-            for (int i = 0; i < BOX_COUNT; i++) cursorPositions[i] = 1;
+            for (int i = 0; i < BOX_COUNT; i++) cursorPositions[i] = width + 1;
 
             int currentBox = 0;
             while (true)
@@ -40,7 +46,7 @@ namespace HW5_EMAR
                         Console.SetCursorPosition(Console.GetCursorPosition().Left - 1, Console.GetCursorPosition().Top);
                     }
                 }
-                else if (Console.GetCursorPosition().Left <= width)
+                else if (Console.GetCursorPosition().Left <= 2 * width)
                 {
                     Console.Write(key.KeyChar);
 
@@ -49,11 +55,13 @@ namespace HW5_EMAR
         }
 
         // DRAW METHODS
-        static void DrawBox(int width, int height, int BOX_COUNT)
+        static void DrawBox(int width, int height, int BOX_COUNT, List<string> BoxLabels)
         {
             foreach (var i in Enumerable.Range(0, BOX_COUNT))
             {
                 Console.WriteLine();
+                Console.SetCursorPosition(Console.GetCursorPosition().Left, Console.GetCursorPosition().Top + 1);
+                Console.WriteLine(BoxLabels[i]);
                 DrawTop(width);
                 Console.WriteLine();
                 DrawMiddle(width, height);
@@ -64,6 +72,7 @@ namespace HW5_EMAR
 
         static void DrawTop(int width)
         {
+            Console.SetCursorPosition(width, Console.GetCursorPosition().Top - 2);
             Console.Write('╔');
             Console.Write(new string('═', width));
             Console.Write('╗');
@@ -71,7 +80,8 @@ namespace HW5_EMAR
 
         static void DrawMiddle(int width, int height)
         {
-            for (int i = 0; i < height - 2; i++)
+            Console.SetCursorPosition(width, Console.GetCursorPosition().Top);
+            for (int i = 0; i < height - 2; i++) 
             {
                 Console.Write('║');
                 Console.Write(new string(' ', width));
@@ -80,6 +90,7 @@ namespace HW5_EMAR
         }
         static void DrawBottom(int width)
         {
+            Console.SetCursorPosition(width, Console.GetCursorPosition().Top);
             Console.Write('╚');
             Console.Write(new string('═', width));
             Console.Write('╝');
