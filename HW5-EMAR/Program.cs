@@ -46,6 +46,10 @@ namespace HW5_EMAR
                         Console.SetCursorPosition(Console.GetCursorPosition().Left - 1, Console.GetCursorPosition().Top);
                     }
                 }
+                else if (key.Key == ConsoleKey.Enter)
+                {
+
+                }
                 else if (Console.GetCursorPosition().Left <= 2 * width)
                 {
                     Console.Write(key.KeyChar);
