@@ -15,7 +15,7 @@ namespace HW5_EMAR
                 "Cep Telefonu",
                 "Cep Telefonu"
             };
-            
+
             DrawBox(width, height, BOX_COUNT, boxLabels);
             Console.SetCursorPosition(width + 1, 2);
             int[] cursorPositions = new int[BOX_COUNT];
@@ -39,7 +39,7 @@ namespace HW5_EMAR
                 }
                 else if (key.Key == ConsoleKey.Backspace)
                 {
-                    if(Console.GetCursorPosition().Left > 1)
+                    if (Console.GetCursorPosition().Left > width + 1)
                     {
                         Console.SetCursorPosition(Console.GetCursorPosition().Left - 1, Console.GetCursorPosition().Top);
                         Console.Write(' ');
@@ -81,7 +81,7 @@ namespace HW5_EMAR
         static void DrawMiddle(int width, int height)
         {
             Console.SetCursorPosition(width, Console.GetCursorPosition().Top);
-            for (int i = 0; i < height - 2; i++) 
+            for (int i = 0; i < height - 2; i++)
             {
                 Console.Write('║');
                 Console.Write(new string(' ', width));
