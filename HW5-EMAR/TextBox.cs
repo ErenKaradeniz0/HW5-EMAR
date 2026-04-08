@@ -23,6 +23,8 @@ namespace HW5_EMAR
         public TextBox()
         {
             Value = string.Empty;
+            CanActive = true;
+            Striped = true;
         }
 
         public override void Draw()

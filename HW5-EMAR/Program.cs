@@ -9,22 +9,40 @@ namespace HW5_EMAR
             var box1 = new TextBox
             {
                 size = new System.Drawing.Size { Width = 20, Height = 3 },
-                location = new System.Drawing.Point(5, 0),
-                Striped = true
+                location = new System.Drawing.Point(25, 0),
             };
             var box2 = new TextBox
             {
                 size = new System.Drawing.Size { Width = 20, Height = 3 },
-                location = new System.Drawing.Point(5, 4),
-                Striped = true
+                location = new System.Drawing.Point(25, 4),
             };
             var box3 = new TextBox
             {
                 size = new System.Drawing.Size { Width = 20, Height = 3 },
+                location = new System.Drawing.Point(25, 8),
+            };
+            var label1 = new LabelBox
+            {
+                size = new System.Drawing.Size { Width = 20, Height = 3 },
+                location = new System.Drawing.Point(5, 0),
+                Value = "Name Surname"
+            };
+            var label2 = new LabelBox
+            {
+                size = new System.Drawing.Size { Width = 20, Height = 3 },
+                location = new System.Drawing.Point(5, 4),
+                Value = "Address"
+            };
+            var label3 = new LabelBox
+            {
+                size = new System.Drawing.Size { Width = 20, Height = 3 },
                 location = new System.Drawing.Point(5, 8),
-                Striped = true
+                Value = "Phone"
             };
 
+            label1.Draw();
+            label2.Draw();
+            label3.Draw();
             DrawBox(box1);
             box2.Draw();
             box3.Draw();
@@ -34,7 +52,7 @@ namespace HW5_EMAR
             while (true)
             {
                 var keyInfo = Console.ReadKey(true);
-                if (keyInfo.Key == ConsoleKey.Tab)
+                if (keyInfo.Key == ConsoleKey.Tab || keyInfo.Key == ConsoleKey.Enter)
                 {
                     if (activeBox == box1)
                         activeBox = box2;

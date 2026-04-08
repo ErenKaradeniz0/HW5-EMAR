@@ -19,7 +19,9 @@ namespace HW5_EMAR
             RightBottomEdge = '╝';
         public Size size { get; set; }
         public Point location { get; set; }
-        public bool Striped { get; set; }
+        protected bool Striped { get; set; }
+        
+        protected bool CanActive { get; set; }
 
         public virtual void Draw()
         {
@@ -56,7 +58,8 @@ namespace HW5_EMAR
         }
         public virtual void Activate()
         {
-            Console.SetCursorPosition(location.X + 1, location.Y + 1);
+            if (CanActive)
+                Console.SetCursorPosition(location.X + 1, location.Y + 1);
         }
     }
 }
