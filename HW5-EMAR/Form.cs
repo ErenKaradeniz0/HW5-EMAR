@@ -34,11 +34,13 @@ namespace HW5_EMAR
         {
             if (info.Key == ConsoleKey.Tab || info.Key == ConsoleKey.Enter)
             {
+                var oldActiveBox = ActiveBox;
                 while (true)
                 {
                     activeBoxIndex = (activeBoxIndex + 1) % Boxes.Count;
                     if (ActiveBox.CanActive)
                     {
+                        oldActiveBox.Deactivate();
                         ActiveBox.Activate();
                         break;
                     }

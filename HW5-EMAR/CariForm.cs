@@ -43,12 +43,19 @@ namespace HW5_EMAR
                 location = new Point(5, 8),
                 Value = "Phone"
             };
+            ButtonBox button = new ButtonBox
+            {
+                size = new Size (20, 3),
+                location = new Point(25, 14),
+                Value = "Submit"
+            };
             Boxes.Add(box1);
             Boxes.Add(box2);
             Boxes.Add(box3);
             Boxes.Add(label1);
             Boxes.Add(label2);
             Boxes.Add(label3);
+            Boxes.Add(button);
         }
     }
 }

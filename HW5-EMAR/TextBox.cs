@@ -49,6 +49,7 @@ namespace HW5_EMAR
 
         public override void Activate()
         {
+            Console.CursorVisible = true;
             Console.SetCursorPosition(location.X + 1 + Value.Length, location.Y + 1);
         }
     }

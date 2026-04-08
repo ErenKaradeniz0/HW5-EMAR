@@ -7,7 +7,7 @@ namespace HW5_EMAR
 {
     public class Box
     {
-        private const char leftTopEdge = '╔',
+        protected char leftTopEdge = '╔',
             RightTopEdge = '╗',
 
             VerticalEdge = '║',
@@ -22,6 +22,7 @@ namespace HW5_EMAR
         protected bool Striped { get; set; }
         
         public bool CanActive { get; protected set; }
+        protected bool IsActive { get; set; }
 
         public virtual void Draw()
         {
@@ -59,7 +60,15 @@ namespace HW5_EMAR
         public virtual void Activate()
         {
             if (CanActive)
+            {
                 Console.SetCursorPosition(location.X + 1, location.Y + 1);
+                IsActive = true;
+            }
+        }
+        public virtual void Deactivate()
+        {
+            IsActive = false;
+             
         }
     }
 }
