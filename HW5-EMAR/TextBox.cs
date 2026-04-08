@@ -36,7 +36,7 @@ namespace HW5_EMAR
 
         public override void Isle(ConsoleKeyInfo keyInfo)
         {
-                if (keyInfo.Key == ConsoleKey.Backspace)
+            if (keyInfo.Key == ConsoleKey.Backspace)
             {
                 if(Value.Length > 0)
                     Value = Value.Remove(Value.Length - 1);
@@ -47,7 +47,7 @@ namespace HW5_EMAR
             }
         }
 
-        public virtual void Activate()
+        public override void Activate()
         {
             Console.SetCursorPosition(location.X + 1 + Value.Length, location.Y + 1);
         }

@@ -21,7 +21,7 @@ namespace HW5_EMAR
         public Point location { get; set; }
         protected bool Striped { get; set; }
         
-        protected bool CanActive { get; set; }
+        public bool CanActive { get; protected set; }
 
         public virtual void Draw()
         {
