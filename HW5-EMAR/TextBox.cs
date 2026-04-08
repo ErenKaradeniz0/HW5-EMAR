@@ -34,7 +34,7 @@ namespace HW5_EMAR
             Console.Write(Value);
         }
 
-        public override void Isle(ConsoleKeyInfo keyInfo)
+        public override void Process(ConsoleKeyInfo keyInfo)
         {
             if (keyInfo.Key == ConsoleKey.Backspace)
             {

@@ -53,7 +53,7 @@ namespace HW5_EMAR
             }
         }
 
-        public virtual void Isle(ConsoleKeyInfo keyInfo)
+        public virtual void Process(ConsoleKeyInfo keyInfo)
         {
 
         }

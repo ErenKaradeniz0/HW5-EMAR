@@ -6,8 +6,8 @@ namespace HW5_EMAR
 {
     public class ButtonBox : Box
     {
-        public delegate void IslemYapDelegate();
-        public event IslemYapDelegate IslemYap;
+        public delegate void ActionDelegate();
+        public event ActionDelegate Action;
         private string _value;
         public string Value
         {
@@ -52,11 +52,11 @@ namespace HW5_EMAR
             base.Deactivate();
             Draw();
         }
-        public override void Isle(ConsoleKeyInfo keyInfo)
+        public override void Process(ConsoleKeyInfo keyInfo)
         {
             if (keyInfo.Key == ConsoleKey.Spacebar)
             {
-                IslemYap?.Invoke();
+                Action?.Invoke();
             }
         }
     }

@@ -6,6 +6,12 @@ namespace HW5_EMAR
 {
     public class LabelBox: Box
     {
+        public LabelBox()
+        {
+            Striped = false;
+            CanActive = false;
+        }
+        
         private string _value;
         public string Value
         {
@@ -18,13 +24,6 @@ namespace HW5_EMAR
                 _value = value;
                 Draw();
             }
-        }
-
-        public LabelBox()
-        {
-            Value = string.Empty;
-            CanActive = false;
-            Striped = false;
         }
 
         public override void Draw()

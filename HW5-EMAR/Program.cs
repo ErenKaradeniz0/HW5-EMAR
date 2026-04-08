@@ -11,7 +11,7 @@ namespace HW5_EMAR
             cariForm.Show();
             while (true)
             {
-                cariForm.TusIsle(Console.ReadKey(true));
+                cariForm.ProcessKey(Console.ReadKey(true));
             }
         }
     }

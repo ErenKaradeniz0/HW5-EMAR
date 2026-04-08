@@ -53,7 +53,7 @@ namespace HW5_EMAR
                 location = new Point(25, 14),
                 Value = "Submit"
             };
-            saveButton.IslemYap += SaveButtonClicked;
+            saveButton.Action += SaveButtonClicked;
 
             ButtonBox cancelButton = new ButtonBox
             {
@@ -61,7 +61,7 @@ namespace HW5_EMAR
                 location = new Point(45, 14),
                 Value = "Cancel"
             };
-            cancelButton.IslemYap += CancelButtonClicked;
+            cancelButton.Action += CancelButtonClicked;
             Boxes.Add(NameSurnameTextBox);
             Boxes.Add(AddressTextBox);
             Boxes.Add(PhoneTextBox);
@@ -77,6 +77,7 @@ namespace HW5_EMAR
             //Console.WriteLine("Save button clicked");
             var nameSurname = NameSurnameTextBox.Value;
             var adress = AddressTextBox.Value;
+            var phone = PhoneTextBox.Value;
 
         }
         public void CancelButtonClicked()

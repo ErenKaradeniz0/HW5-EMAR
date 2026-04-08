@@ -30,7 +30,7 @@ namespace HW5_EMAR
             ActiveBox.Activate();
         }
 
-        public virtual void TusIsle(ConsoleKeyInfo info)
+        public virtual void ProcessKey(ConsoleKeyInfo info)
         {
             if (info.Key == ConsoleKey.Tab || info.Key == ConsoleKey.Enter)
             {
@@ -49,7 +49,7 @@ namespace HW5_EMAR
             }
             else
             {
-                ActiveBox.Isle(info);
+                ActiveBox.Process(info);
             }
         }
     }
