@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace HW5_EMAR
+﻿namespace HW5_EMAR
 {
     public class TextBox : Box
     {
@@ -38,7 +34,7 @@ namespace HW5_EMAR
         {
             if (keyInfo.Key == ConsoleKey.Backspace)
             {
-                if(Value.Length > 0)
+                if (Value.Length > 0)
                     Value = Value.Remove(Value.Length - 1);
             }
             else if (Value.Length < size.Width - 2)

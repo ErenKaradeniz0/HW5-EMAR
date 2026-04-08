@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace HW5_EMAR
+﻿namespace HW5_EMAR
 {
     internal class Program
     {

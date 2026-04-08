@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace HW5_EMAR
+﻿namespace HW5_EMAR
 {
     public class ButtonBox : Box
     {
@@ -31,14 +27,14 @@ namespace HW5_EMAR
         public override void Draw()
         {
 
-            leftTopEdge = IsActive ? '╔' : '┌'; 
+            leftTopEdge = IsActive ? '╔' : '┌';
             RightTopEdge = IsActive ? '╗' : '┐';
             LeftBottomEdge = IsActive ? '╚' : '└';
             RightBottomEdge = IsActive ? '╝' : '┘';
             HorizontalEdge = IsActive ? '═' : '─';
-            VerticalEdge = IsActive ? '║' : '│'; 
+            VerticalEdge = IsActive ? '║' : '│';
             base.Draw();
-            Console.SetCursorPosition(location.X + size.Width/2 - Value.Length/2, location.Y + 1);
+            Console.SetCursorPosition(location.X + size.Width / 2 - Value.Length / 2, location.Y + 1);
             Console.Write(Value);
         }
         public override void Activate()

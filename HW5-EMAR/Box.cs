@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Text;
+﻿using System.Drawing;
 
 namespace HW5_EMAR
 {
@@ -20,7 +17,7 @@ namespace HW5_EMAR
         public Size size { get; set; }
         public Point location { get; set; }
         protected bool Striped { get; set; }
-        
+
         public bool CanActive { get; protected set; }
         protected bool IsActive { get; set; }
 
@@ -68,7 +65,7 @@ namespace HW5_EMAR
         public virtual void Deactivate()
         {
             IsActive = false;
-             
+
         }
     }
 }
