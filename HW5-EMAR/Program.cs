@@ -12,13 +12,43 @@ namespace HW5_EMAR
                 location = new System.Drawing.Point(5, 0),
                 Striped = true
             };
+            var box2 = new TextBox
+            {
+                size = new System.Drawing.Size { Width = 20, Height = 3 },
+                location = new System.Drawing.Point(5, 4),
+                Striped = true
+            };
+            var box3 = new TextBox
+            {
+                size = new System.Drawing.Size { Width = 20, Height = 3 },
+                location = new System.Drawing.Point(5, 8),
+                Striped = true
+            };
+
             DrawBox(box1);
+            box2.Draw();
+            box3.Draw();
+            
+            TextBox activeBox = box1;
+            activeBox.Activate();
             while (true)
             {
-                box1.Isle(Console.ReadKey(true));
+                var keyInfo = Console.ReadKey(true);
+                if (keyInfo.Key == ConsoleKey.Tab)
+                {
+                    if (activeBox == box1)
+                        activeBox = box2;
+                    else if (activeBox == box2)
+                        activeBox = box3;
+                    else
+                        activeBox = box1;
+                    activeBox.Activate();
+                }
+                else
+                {
+                    activeBox.Isle(keyInfo);
+                }
             }
-            Console.ReadLine();
-
         }
 
         static void DrawBox(Box box)

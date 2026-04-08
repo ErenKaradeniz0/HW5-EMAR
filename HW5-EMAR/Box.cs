@@ -24,28 +24,28 @@ namespace HW5_EMAR
         public virtual void Draw()
         {
 
-            Console.SetCursorPosition(location.X, location.Y);
-            Console.Write(leftTopEdge);
-            Console.Write(new string(HorizontalEdge, size.Width - 2));
-            Console.Write(RightTopEdge);
-            Console.SetCursorPosition(location.X, location.Y + 1);
-
-
-            for (int i = 0; i < size.Height - 2; i++)
-            {
-                Console.SetCursorPosition(location.X, location.Y + i + 1);
-                Console.Write(VerticalEdge);
-                Console.Write(new string(' ', size.Width - 2));
-                Console.WriteLine(VerticalEdge);
-            }
-
-            Console.SetCursorPosition(location.X, location.Y + size.Height - 1);
-            Console.Write(LeftBottomEdge);
-            Console.Write(new string(HorizontalEdge, size.Width - 2));
-            Console.Write(RightBottomEdge);
-
             if (Striped)
             {
+                Console.SetCursorPosition(location.X, location.Y);
+                Console.Write(leftTopEdge);
+                Console.Write(new string(HorizontalEdge, size.Width - 2));
+                Console.Write(RightTopEdge);
+                Console.SetCursorPosition(location.X, location.Y + 1);
+
+
+                for (int i = 0; i < size.Height - 2; i++)
+                {
+                    Console.SetCursorPosition(location.X, location.Y + i + 1);
+                    Console.Write(VerticalEdge);
+                    Console.Write(new string(' ', size.Width - 2));
+                    Console.WriteLine(VerticalEdge);
+                }
+
+                Console.SetCursorPosition(location.X, location.Y + size.Height - 1);
+                Console.Write(LeftBottomEdge);
+                Console.Write(new string(HorizontalEdge, size.Width - 2));
+                Console.Write(RightBottomEdge);
+                Console.SetCursorPosition(location.X + 1, location.Y + 1);
 
             }
         }
@@ -54,6 +54,9 @@ namespace HW5_EMAR
         {
 
         }
-
+        public virtual void Activate()
+        {
+            Console.SetCursorPosition(location.X + 1, location.Y + 1);
+        }
     }
 }

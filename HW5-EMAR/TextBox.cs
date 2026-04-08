@@ -16,6 +16,7 @@ namespace HW5_EMAR
             set
             {
                 _value = value;
+                Draw();
             }
         }
 
@@ -28,20 +29,25 @@ namespace HW5_EMAR
         {
             base.Draw();
             Console.SetCursorPosition(location.X + 1, location.Y + 1);
+            Console.Write(Value);
         }
 
         public override void Isle(ConsoleKeyInfo keyInfo)
         {
-            if (keyInfo.Key == ConsoleKey.Backspace)
+                if (keyInfo.Key == ConsoleKey.Backspace)
             {
-                Value = Value.Remove(Value.Length - 1);
+                if(Value.Length > 0)
+                    Value = Value.Remove(Value.Length - 1);
             }
             else if (Value.Length < size.Width - 2)
             {
                 Value += keyInfo.KeyChar;
             }
-            Console.SetCursorPosition(location.X + 1, location.Y + 1);
-            Console.Write(Value);
+        }
+
+        public virtual void Activate()
+        {
+            Console.SetCursorPosition(location.X + 1 + Value.Length, location.Y + 1);
         }
     }
 }
