@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-
+            Console.CursorVisible = false;
             CariForm cariForm = new CariForm();
             cariForm.Show();
             while (true)

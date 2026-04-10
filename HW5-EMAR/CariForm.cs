@@ -1,4 +1,5 @@
 ﻿using System.Drawing;
+using System.IO;
 
 namespace HW5_EMAR
 {
@@ -39,10 +40,10 @@ namespace HW5_EMAR
             LabelBox CategoryLabel = new LabelBox { size = new Size(20, 3), location = new Point(5, 21), Value = "Kategori" };
             CategoryTextBox = new TextBox { size = new Size(20, 3), location = new Point(25, 21) };
 
-            ButtonBox saveButton = new ButtonBox { size = new Size(20, 3), location = new Point(25, 25), Value = "Submit" };
+            ButtonBox saveButton = new ButtonBox { size = new Size(20, 3), location = new Point(25, 25), Value = "Kaydet" };
             saveButton.Action += SaveButtonClicked;
 
-            ButtonBox cancelButton = new ButtonBox { size = new Size(20, 3), location = new Point(45, 25), Value = "Cancel" };
+            ButtonBox cancelButton = new ButtonBox { size = new Size(20, 3), location = new Point(45, 25), Value = "Iptal" };
             cancelButton.Action += CancelButtonClicked;
 
             Boxes.Add(CompanyNameLabel);
@@ -76,11 +77,50 @@ namespace HW5_EMAR
             var district = DistrictTextBox.Value;
             var address = AddressTextBox.Value;
             var category = CategoryTextBox.Value;
+
+            string record =
+                            $"------------------------------\n" +
+                            $"Firma Adi: {companyName}\n" +
+                            $"------------------------------\n" +
+                            $"Firma VKN: {companyTaxId}\n" +
+                            $"------------------------------\n" +
+                            $"Ad Soyad: {nameSurname}\n" +
+                            $"------------------------------\n" +
+                            $"Telefon: {phone}\n" +
+                            $"------------------------------\n" +
+                            $"Il: {city}\n" +
+                            $"------------------------------\n" +
+                            $"Ilce: {district}\n" +
+                            $"------------------------------\n" +
+                            $"Adres: {address}\n" +
+                            $"------------------------------\n" +
+                            $"Kategori: {category}\n" +
+                            $"------------------------------\n";
+
+            File.AppendAllText("records.txt", record);
+
+            CompanyNameTextBox.Value = string.Empty;
+            CompanyTaxIdTextBox.Value = string.Empty;
+            NameSurnameTextBox.Value = string.Empty;
+            PhoneTextBox.Value = string.Empty;
+            CityTextBox.Value = string.Empty;
+            DistrictTextBox.Value = string.Empty;
+            AddressTextBox.Value = string.Empty;
+            CategoryTextBox.Value = string.Empty;
         }
 
         public void CancelButtonClicked()
         {
-            Console.WriteLine("Cancel button clicked");
+            //Console.WriteLine("Cancel button clicked");
+
+            CompanyNameTextBox.Value = string.Empty;
+            CompanyTaxIdTextBox.Value = string.Empty;
+            NameSurnameTextBox.Value = string.Empty;
+            PhoneTextBox.Value = string.Empty;
+            CityTextBox.Value = string.Empty;
+            DistrictTextBox.Value = string.Empty;
+            AddressTextBox.Value = string.Empty;
+            CategoryTextBox.Value = string.Empty;
         }
     }
 }
