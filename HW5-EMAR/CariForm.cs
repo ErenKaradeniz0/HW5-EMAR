@@ -13,6 +13,7 @@ namespace HW5_EMAR
         TextBox DistrictTextBox;
         TextBox AddressTextBox;
         TextBox CategoryTextBox;
+        LabelBox InfoLabel;
 
         public CariForm()
         {
@@ -46,6 +47,8 @@ namespace HW5_EMAR
             ButtonBox cancelButton = new ButtonBox { size = new Size(20, 3), location = new Point(45, 25), Value = "Iptal" };
             cancelButton.Action += CancelButtonClicked;
 
+            InfoLabel = new LabelBox { size = new Size(60, 3), location = new Point(5, 28), Value = "Tab ile ilerle - Space ile butona bas" };
+
             Boxes.Add(CompanyNameLabel);
             Boxes.Add(CompanyNameTextBox);
             Boxes.Add(CompanyTaxIdLabel);
@@ -64,6 +67,7 @@ namespace HW5_EMAR
             Boxes.Add(CategoryTextBox);
             Boxes.Add(saveButton);
             Boxes.Add(cancelButton);
+            Boxes.Add(InfoLabel);
         }
 
         public void SaveButtonClicked()
@@ -98,6 +102,8 @@ namespace HW5_EMAR
                             $"------------------------------\n";
 
             File.AppendAllText("records.txt", record);
+
+            InfoLabel.Value = "Kaydedildi";
 
             CompanyNameTextBox.Value = string.Empty;
             CompanyTaxIdTextBox.Value = string.Empty;

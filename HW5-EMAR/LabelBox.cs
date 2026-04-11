@@ -26,7 +26,10 @@
         {
             base.Draw();
             Console.SetCursorPosition(location.X + 1, location.Y + 1);
-            Console.Write(Value);
+            var text = Value ?? string.Empty;
+            var max = Math.Max(0, size.Width - 2);
+            if (text.Length > max) text = text.Substring(0, max);
+            Console.Write(text.PadRight(max));
         }
     }
 }
