@@ -1,4 +1,4 @@
-﻿using HW5_EMAR.Boxes;
+using HW5_EMAR.Boxes;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -46,6 +46,15 @@ namespace HW5_EMAR.Forms
             Console.Clear();
             activeBoxIndex = 0;
             CariForm cariForm = new CariForm();
+            cariForm.OnBack = () =>
+            {
+                Boxes.Clear();
+                Console.Clear();
+                activeBoxIndex = 0;
+                InitializeMainFormBoxes();
+                Show();
+            };
+
             Boxes.AddRange(cariForm.Boxes);
             Show();
         }

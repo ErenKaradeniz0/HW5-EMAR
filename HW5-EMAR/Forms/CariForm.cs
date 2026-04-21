@@ -1,4 +1,5 @@
-﻿using HW5_EMAR.Boxes;
+using HW5_EMAR.Boxes;
+using System;
 using System.Drawing;
 using System.IO;
 
@@ -15,6 +16,8 @@ namespace HW5_EMAR.Forms
         TextBox AddressTextBox;
         TextBox CategoryTextBox;
         LabelBox InfoLabel;
+
+        public Action OnBack { get; set; }
 
         public CariForm()
         {
@@ -136,7 +139,7 @@ namespace HW5_EMAR.Forms
         }
         public void BackButtonClicked()
         {
-            MainForm mainForm = new MainForm();
+            OnBack?.Invoke();
         }
     }
 }
