@@ -16,11 +16,11 @@ namespace HW5_EMAR
                     2.1 - kayıtları otomatik tutma
              */
             Console.CursorVisible = false;
-            CariForm cariForm = new CariForm();
-            cariForm.Show();
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
             while (true)
             {
-                cariForm.ProcessKey(Console.ReadKey(true));
+                mainForm.ProcessKey(Console.ReadKey(true));
             }
         }
     }

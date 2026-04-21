@@ -48,26 +48,31 @@ namespace HW5_EMAR.Forms
             ButtonBox cancelButton = new ButtonBox { size = new Size(20, 3), location = new Point(45, 25), Value = "Iptal" };
             cancelButton.Action += CancelButtonClicked;
 
+            ButtonBox backButton = new ButtonBox { size = new Size(20, 3), location = new Point(65, 25), Value = "Geri dön" };
+            backButton.Action += BackButtonClicked;
+
+
             InfoLabel = new LabelBox { size = new Size(60, 3), location = new Point(5, 28), Value = "Tab ile ilerle - Space ile butona bas" };
 
-            Boxes.Add(CompanyNameLabel);
             Boxes.Add(CompanyNameTextBox);
-            Boxes.Add(CompanyTaxIdLabel);
+            Boxes.Add(CompanyNameLabel);
             Boxes.Add(CompanyTaxIdTextBox);
-            Boxes.Add(NameSurnameLabel);
+            Boxes.Add(CompanyTaxIdLabel);
             Boxes.Add(NameSurnameTextBox);
-            Boxes.Add(PhoneLabel);
+            Boxes.Add(NameSurnameLabel);
             Boxes.Add(PhoneTextBox);
-            Boxes.Add(CityLabel);
+            Boxes.Add(PhoneLabel);
             Boxes.Add(CityTextBox);
-            Boxes.Add(DistrictLabel);
+            Boxes.Add(CityLabel);
             Boxes.Add(DistrictTextBox);
-            Boxes.Add(AddressLabel);
+            Boxes.Add(DistrictLabel);
             Boxes.Add(AddressTextBox);
-            Boxes.Add(CategoryLabel);
+            Boxes.Add(AddressLabel);
             Boxes.Add(CategoryTextBox);
+            Boxes.Add(CategoryLabel);
             Boxes.Add(saveButton);
             Boxes.Add(cancelButton);
+            Boxes.Add(backButton);
             Boxes.Add(InfoLabel);
         }
 
@@ -128,6 +133,10 @@ namespace HW5_EMAR.Forms
             DistrictTextBox.Value = string.Empty;
             AddressTextBox.Value = string.Empty;
             CategoryTextBox.Value = string.Empty;
+        }
+        public void BackButtonClicked()
+        {
+            MainForm mainForm = new MainForm();
         }
     }
 }

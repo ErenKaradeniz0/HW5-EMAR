@@ -5,7 +5,7 @@ namespace HW5_EMAR.Forms
     public class Form
     {
         public List<Box> Boxes { get; set; }
-        private int activeBoxIndex = 0;
+        public int activeBoxIndex = 0;
         public Box ActiveBox
         {
             get
