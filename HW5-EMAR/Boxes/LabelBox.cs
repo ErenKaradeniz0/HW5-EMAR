@@ -1,4 +1,4 @@
-﻿namespace HW5_EMAR
+﻿namespace HW5_EMAR.Boxes
 {
     public class LabelBox : Box
     {

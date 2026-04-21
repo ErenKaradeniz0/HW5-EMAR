@@ -1,4 +1,6 @@
-﻿namespace HW5_EMAR
+﻿using HW5_EMAR.Forms;
+
+namespace HW5_EMAR
 {
     internal class Program
     {

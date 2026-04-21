@@ -1,6 +1,7 @@
-﻿using System.Drawing;
+﻿using HW5_EMAR.Boxes;
+using System.Drawing;
 
-namespace HW5_EMAR
+namespace HW5_EMAR.Forms
 {
     public class LoginForm : Form
     {

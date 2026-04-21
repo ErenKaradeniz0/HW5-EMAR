@@ -1,4 +1,6 @@
-﻿namespace HW5_EMAR
+﻿using HW5_EMAR.Boxes;
+
+namespace HW5_EMAR.Forms
 {
     public class Form
     {
