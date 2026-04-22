@@ -39,8 +39,8 @@ namespace HW5_EMAR.Forms
             Boxes.Clear();
             Console.Clear();
             activeBoxIndex = 0;
-            CariListForm cariListForm = new CariListForm();
-            cariListForm.OnBack = () =>
+            CariListForm cariForm = new CariListForm();
+            cariForm.OnBack = () =>
             {
                 Boxes.Clear();
                 Console.Clear();
@@ -48,8 +48,15 @@ namespace HW5_EMAR.Forms
                 InitializeMainFormBoxes();
                 Show();
             };
+            cariForm.OnReload = () =>
+            {
+                Boxes.Clear();
+                Console.Clear();
+                activeBoxIndex = 0;
+                listCariButtonClicked();
+            };
 
-            Boxes.AddRange(cariListForm.Boxes);
+            Boxes.AddRange(cariForm.Boxes);
             Show(); 
         }
 
