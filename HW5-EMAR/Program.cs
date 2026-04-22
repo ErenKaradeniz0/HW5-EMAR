@@ -8,12 +8,8 @@ namespace HW5_EMAR
         {
             /*
              TODO: HW7
-               0 - ana sayfa oluşturma (cari listele cari olutuştur seçeneği olmalı)
-               1 - cari kayıtları listeleme özelliğ
-                    1.1 - listeden kayıt seçip silme özelliği
-                    1.2 - listeden kayıt seçip güncelleme özelliği
-               2 - cari oluşturma özelliği
-                    2.1 - kayıtları otomatik tutma
+                1.1 - listeden kayıt seçip silme özelliği
+                1.2 - listeden kayıt seçip güncelleme özelliği
              */
             Console.CursorVisible = false;
             MainForm mainForm = new MainForm();

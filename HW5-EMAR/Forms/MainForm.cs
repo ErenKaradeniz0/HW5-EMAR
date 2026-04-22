@@ -37,7 +37,20 @@ namespace HW5_EMAR.Forms
         public void listCariButtonClicked()
         {
             Boxes.Clear();
-            
+            Console.Clear();
+            activeBoxIndex = 0;
+            CariListForm cariListForm = new CariListForm();
+            cariListForm.OnBack = () =>
+            {
+                Boxes.Clear();
+                Console.Clear();
+                activeBoxIndex = 0;
+                InitializeMainFormBoxes();
+                Show();
+            };
+
+            Boxes.AddRange(cariListForm.Boxes);
+            Show(); 
         }
 
         public void createCariButtonClicked()
